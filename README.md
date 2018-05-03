@@ -12,3 +12,5 @@
 
 ## Visit the deployed site
 - [https://nyc-forecast.herokuapp.com/](https://nyc-forecast.herokuapp.com/)
+- Note: Heroku deployed sites are served over HTTPS, api requests in HTTP only
+might result in errors.
