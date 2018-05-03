@@ -9,3 +9,6 @@
 - run ```yarn start```
 - go to [http://localhost:3000/](http://localhost:3000/) in a browser
 - to deploy, run ```yarn build```
+
+## Visit the deployed site
+- [https://nyc-forecast.herokuapp.com/](https://nyc-forecast.herokuapp.com/)
