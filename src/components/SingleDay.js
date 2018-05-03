@@ -727,10 +727,10 @@ class SingleDay extends Component {
     return (
       <Fragment>
         <button>Toggle from {this.state.currentMeasurement}</button>
-        <ul>
+        <ul className="container">
           {sevenDayForecast.map(data => {
             return (
-              <li key={data.timestamp}>
+              <li className="weather-card" key={data.timestamp}>
                 <div>Date: {data.dateTimeISO.slice(0, 10)}</div>
                 <div>High Temp: {data.maxTempC}º{this.state.currentShort}</div>
                 <div>Low Temp: {data.minTempC}º{this.state.currentShort}</div>

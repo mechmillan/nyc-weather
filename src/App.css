@@ -9,6 +9,11 @@
   color: rgb(245, 244, 244);
 }
 
+ul, li {
+  padding: 0px;
+  list-style-type: none;
+}
+
 .App-title {
   font-size: 1.5em;
 }
@@ -17,7 +22,20 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  border: solid 1px dodgerblue;
+}
+
+.weather-card {
+  display: flex;
+  width: 300px;
+  height: 100px;
+  margin: 5px;
+  padding: 5px;
+  border: solid 1px red;
 }
