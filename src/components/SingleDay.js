@@ -7,7 +7,7 @@ class SingleDay extends Component {
     this.state = {
       jsonData: [],
       currentMeasurement: "Celsius",
-      currentShort: "C",
+      currentShort: "C"
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -18,7 +18,7 @@ class SingleDay extends Component {
     // TODO: add process.env to limit keys uploaded to Github
     let id = "y3FYC2sF8soVqME6k1OZM";
     let secret = "nALkHobvOaaUJ8VmdZKOROapiVHSfHVj4RsjZIuo";
-    let zip = "11101";
+    let zip = "10039";
 
     return fetch(
       `http://api.aerisapi.com/forecasts/${zip}?client_id=${id}&client_secret=${secret}`
@@ -63,21 +63,24 @@ class SingleDay extends Component {
 
         <ul className="container">
           {currentShort === "C"
-            ? sevenDayForecast.map(data => {
+            ? sevenDayForecast && sevenDayForecast.map(data => {
                 return (
                   <li className="weather-card" key={data.timestamp}>
-                    <div>Date: {data.dateTimeISO.slice(0, 10)}</div>
                     <div>
-                      High Temp: {data.maxTempC}º{currentShort}
+                      <strong>Date:</strong> {data.dateTimeISO.slice(0, 10)}
                     </div>
                     <div>
-                      Low Temp: {data.minTempC}º{currentShort}
+                      <strong>High Temp:</strong> {data.maxTempC}º{currentShort}
+                    </div>
+                    <div>
+                      <strong>Low Temp:</strong> {data.minTempC}º{currentShort}
                     </div>
                     <img
                       src={`/icons/${data.icon}`}
                       alt={data.weatherPrimary}
                       height="55px"
                       width="55px"
+                      title={data.weatherPrimary}
                     />
                   </li>
                 );
@@ -85,18 +88,21 @@ class SingleDay extends Component {
             : sevenDayForecast.map(data => {
                 return (
                   <li className="weather-card" key={data.timestamp}>
-                    <div>Date: {data.dateTimeISO.slice(0, 10)}</div>
                     <div>
-                      High Temp: {data.maxTempF}º{currentShort}
+                      <strong>Date:</strong> {data.dateTimeISO.slice(0, 10)}
                     </div>
                     <div>
-                      Low Temp: {data.minTempF}º{currentShort}
+                      <strong>High Temp:</strong> {data.maxTempF}º{currentShort}
+                    </div>
+                    <div>
+                      <strong>Low Temp:</strong> {data.minTempF}º{currentShort}
                     </div>
                     <img
                       src={`/icons/${data.icon}`}
                       alt={data.weatherPrimary}
                       height="55px"
                       width="55px"
+                      title={data.weatherPrimary}
                     />
                   </li>
                 );

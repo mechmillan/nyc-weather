@@ -28,14 +28,14 @@ ul, li {
   justify-content: space-around;
   align-items: center;
   align-content: space-around;
-  border: solid 1px dodgerblue;
 }
 
-.weather-card {
-  display: flex;
-  width: 300px;
-  height: 100px;
-  margin: 5px;
-  padding: 5px;
-  border: solid 1px red;
+.weather-card{
+    flex-direction: column;
+    background-color: #fff;
+    color: #000;
+    margin: 10px;
+    width: 150px;
+    height: 115px;
+    border: solid 2px beige;
 }
