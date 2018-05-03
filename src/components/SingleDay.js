@@ -21,7 +21,7 @@ class SingleDay extends Component {
     let zip = "10039";
 
     return fetch(
-      `http://api.aerisapi.com/forecasts/${zip}?client_id=${id}&client_secret=${secret}`
+      `https://api.aerisapi.com/forecasts/${zip}?client_id=${id}&client_secret=${secret}`
     )
       .then(response => response.json())
       .then(data => {
