@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import SingleDay from './components/SingleDay';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,9 +12,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">NYC Weather Forecast</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <SingleDay />
       </div>
     );
   }
