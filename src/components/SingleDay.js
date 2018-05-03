@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-
 const dummyData = {
   success: true,
   error: null,
@@ -712,31 +711,79 @@ class SingleDay extends Component {
       lowTempC: "",
       highTempF: "",
       lowTempF: "",
-      toggle: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-
+  handleClick(event) {
+    let { currentMeasurement } = this.state;
+    if (currentMeasurement === "Celsius") {
+      this.setState({
+        currentMeasurement: "Farenheit",
+        currentShort: "F",
+      });
+    } else {
+      this.setState({
+        currentMeasurement: "Celsius",
+        currentShort: "C",
+      });
+    }
   }
 
   render() {
     let sevenDayForecast = dummyData.response[0].periods;
+    let { currentMeasurement, currentShort } = this.state;
+
     return (
       <Fragment>
-        <button>Toggle from {this.state.currentMeasurement}</button>
+        <button onClick={this.handleClick}>
+          Toggle from {currentMeasurement}
+        </button>
+
         <ul className="container">
-          {sevenDayForecast.map(data => {
-            return (
-              <li className="weather-card" key={data.timestamp}>
-                <div>Date: {data.dateTimeISO.slice(0, 10)}</div>
-                <div>High Temp: {data.maxTempC}º{this.state.currentShort}</div>
-                <div>Low Temp: {data.minTempC}º{this.state.currentShort}</div>
-              </li>
-            );
-          })}
+          {
+            currentShort === "C"
+            ? sevenDayForecast.map(data => {
+                return (
+                  <li className="weather-card" key={data.timestamp}>
+                    <div>Date: {data.dateTimeISO.slice(0, 10)}</div>
+                    <div>
+                      High Temp: {data.maxTempC}º{currentShort}
+                    </div>
+                    <div>
+                      Low Temp: {data.minTempC}º{currentShort}
+                    </div>
+                    <img
+                      src={`/icons/${data.icon}`}
+                      alt={data.weatherPrimary}
+                      height="55px"
+                      width="55px"
+                    />
+                  </li>
+                );
+              })
+            : sevenDayForecast.map(data => {
+              return (
+                <li className="weather-card" key={data.timestamp}>
+                  <div>Date: {data.dateTimeISO.slice(0, 10)}</div>
+                  <div>
+                    High Temp: {data.maxTempF}º{currentShort}
+                  </div>
+                  <div>
+                    Low Temp: {data.minTempF}º{currentShort}
+                  </div>
+                  <img
+                    src={`/icons/${data.icon}`}
+                    alt={data.weatherPrimary}
+                    height="55px"
+                    width="55px"
+                  />
+
+                </li>
+              );
+            })
+          }
         </ul>
       </Fragment>
     );
