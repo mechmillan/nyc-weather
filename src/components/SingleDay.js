@@ -695,7 +695,7 @@ const dummyData = {
   ]
 };
 
-console.log(dummyData.response[0].periods);
+// console.log(dummyData.response[0].periods);
 
 class SingleDay extends Component {
   constructor(props) {
@@ -737,7 +737,7 @@ class SingleDay extends Component {
 
     return (
       <Fragment>
-        <button onClick={this.handleClick}>
+        <button className="button" onClick={this.handleClick}>
           Toggle from {currentMeasurement}
         </button>
 
