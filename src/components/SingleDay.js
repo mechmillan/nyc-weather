@@ -82,7 +82,9 @@ class SingleDay extends Component {
                       width="55px"
                       title={data.weatherPrimary}
                     />
-                    <p>{data.weatherPrimary}</p>
+                    <div>
+                      <h5>{data.weatherPrimary}</h5>
+                    </div>
                   </li>
                 );
               })
@@ -105,7 +107,9 @@ class SingleDay extends Component {
                       width="55px"
                       title={data.weatherPrimary}
                     />
-                    <p>{data.weatherPrimary}</p>
+                    <div>
+                      <h5>{data.weatherPrimary}</h5>
+                    </div>
                   </li>
                 );
               })}
