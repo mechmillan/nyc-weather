@@ -16,8 +16,8 @@ class SingleDay extends Component {
 
   fetchCurrentWeather() {
     // TODO: add process.env to limit keys uploaded to Github
-    let id = "y3FYC2sF8soVqME6k1OZM";
-    let secret = "nALkHobvOaaUJ8VmdZKOROapiVHSfHVj4RsjZIuo";
+    let id = process.env.CLIENT_ID;
+    let secret = process.env.CLIENT_SECRET;
     let zip = "10039";
 
     return fetch(
