@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from "react";
+require('dotenv').config();
+
 
 class SingleDay extends Component {
   constructor(props) {
@@ -15,7 +17,6 @@ class SingleDay extends Component {
   }
 
   fetchCurrentWeather() {
-    // TODO: add process.env to limit keys uploaded to Github
     let id = process.env.CLIENT_ID;
     let secret = process.env.CLIENT_SECRET;
     let zip = "10039";
