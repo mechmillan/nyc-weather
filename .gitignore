@@ -10,6 +10,7 @@
 /build
 
 # misc
+/src/secrets.js
 secrets.js
 .DS_Store
 .env
