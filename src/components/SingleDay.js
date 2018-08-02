@@ -15,8 +15,8 @@ class SingleDay extends Component {
   }
 
   fetchCurrentWeather() {
-    let id = process.env.CLIENT_ID || 'y3FYC2sF8soVqME6k1OZM';
-    let secret = process.env.CLIENT_SECRET || 'nALkHobvOaaUJ8VmdZKOROapiVHSfHVj4RsjZIuo';
+    let id = process.env.CLIENT_ID;
+    let secret = process.env.CLIENT_SECRET;
     let zip = "10014";
 
     return fetch(
