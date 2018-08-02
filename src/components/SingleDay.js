@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
-require('dotenv').config();
-
+import secrets from '../secrets';
 
 class SingleDay extends Component {
   constructor(props) {
@@ -17,8 +16,8 @@ class SingleDay extends Component {
   }
 
   fetchCurrentWeather() {
-    let id = process.env.CLIENT_ID;
-    let secret = process.env.CLIENT_SECRET;
+    let id = secrets.CLIENT_ID;
+    let secret = secrets.CLIENT_SECRET;
     let zip = "10039";
 
     return fetch(
