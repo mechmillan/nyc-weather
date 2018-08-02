@@ -17,7 +17,7 @@ class SingleDay extends Component {
   fetchCurrentWeather() {
     let id = process.env.CLIENT_ID;
     let secret = process.env.CLIENT_SECRET;
-    let zip = "10039";
+    let zip = "10014";
 
     return fetch(
       `https://api.aerisapi.com/forecasts/${zip}?client_id=${id}&client_secret=${secret}`
